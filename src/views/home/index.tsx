@@ -28,8 +28,8 @@ export const HomeView: FC = ({ }) => {
 
   return (
 
-    <div className="md:hero mx-auto p-4">
-      <div className="md:hero-content flex flex-col">
+    <div className="md:hero mx-auto p-4 h-full content-center justify-center items-center">
+      {/*<div className="md:hero-content flex flex-col">
         <h1 className="text-center text-5xl md:pl-12 font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195]">
           Scaffold Lite <span className='text-sm font-normal align-top text-slate-700'>v{pkg.version}</span>
         </h1>
@@ -44,10 +44,11 @@ export const HomeView: FC = ({ }) => {
         </div>        
           <div className="text-center">
           <RequestAirdrop />
-          {/* {wallet.publicKey && <p>Public Key: {wallet.publicKey.toBase58()}</p>} */}
+          {/* {wallet.publicKey && <p>Public Key: {wallet.publicKey.toBase58()}</p>} }
           {wallet && <p>SOL Balance: {(balance || 0).toLocaleString()}</p>}
         </div>
-      </div>
+      </div>*/}
+     <h2  style={{borderRadius:'5px',backgroundColor:'white',padding:'15px',cursor:'pointer',color:'black'}}>Connect Wallet</h2>
     </div>
   );
 };
