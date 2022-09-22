@@ -4,6 +4,7 @@ import { CoinInfoResult } from "../models/types";
 import useSolanaPriceStore from "stores/useSolanaPriceStore";
 
 export default function PriceCard() {
+  const formatter = Intl.NumberFormat("en", { notation: "compact" });
   const { setSolanaInfo, solanaInfo } = useSolanaPriceStore((state) => state);
 
   const coinId = "solana";
@@ -33,12 +34,12 @@ export default function PriceCard() {
   // TODO: format values and put them in a styled card
   return (
     <div>
-      <div>Market Cap: {solanaInfo?.marketCap}</div>
-      <div>Market Cap Rank: {solanaInfo?.marketCapRank}</div>
+      <div>Market Cap: {formatter.format(solanaInfo?.marketCap)}</div>
+      <div>Market Cap Rank: {formatter.format(solanaInfo?.marketCapRank)}</div>
       <div>Solana Price: {solanaInfo?.price}</div>
       <div>Solana Price change %: {solanaInfo?.priceChange24}</div>
-      <div>volume: {solanaInfo?.volume24}</div>
-      <div>updated at: {JSON.stringify(solanaInfo?.updatedAt)}</div>
+      <div>volume: {formatter.format(solanaInfo?.volume24)}</div>
+      <div>updated at: {solanaInfo?.updatedAt.toDateString()}</div>
     </div>
   );
 }
