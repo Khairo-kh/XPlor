@@ -12,8 +12,13 @@ export const AppBar: FC = props => {
   return (
     <div className='w-full flex align-center justify-between p-3.5 mb-8'>
      <h2 className="text-2xl text-green-500" >SOLANA</h2>
+     <div className='gap-3 flex'>
+     <select className='text-black'name="environment" id="environment">
+       <option value="devnet">Devnet</option>
+       <option value="mainnet">Mainnet</option>
+  </select>
      <button  className='bg-green-500'style={{borderRadius:'5px',padding:'10px',cursor:'pointer',color:'black'}}>Connect Wallet</button>
-     
+     </div>
     </div>
   );
 };
