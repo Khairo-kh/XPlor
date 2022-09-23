@@ -14,7 +14,6 @@ export default function AccountDetails({ data }: { data?: AddressDetails }) {
   const isToken =
     dataDetails?.program === "spl-token" && dataDetails?.parsed.type === "mint";
 
-
   if (isToken) {
     return (
       <VStack
@@ -52,7 +51,15 @@ export default function AccountDetails({ data }: { data?: AddressDetails }) {
   }
 
   return (
-    <VStack my="2" w="100%" align="start" background="white" rounded="lg" p="4">
+    <VStack
+      my="2"
+      w="100%"
+      align="start"
+      rounded="lg"
+      bg="#36b85f"
+      borderRadius={5}
+      p={5}
+    >
       <Heading size="md">Account</Heading>
       <Table variant="simple">
         <Tbody>

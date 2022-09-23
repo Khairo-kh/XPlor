@@ -63,7 +63,15 @@ export default function TransactionDetails() {
   }
 
   return (
-    <VStack my="2" w="100%" align="start" background="white" rounded="lg" p="4">
+    <VStack
+      my="2"
+      w="100%"
+      align="start"
+      rounded="lg"
+      bg="#36b85f"
+      borderRadius={5}
+      p={5}
+    >
       <Heading size="md">Transaction</Heading>
       <Table variant="simple">
         <Tbody>
