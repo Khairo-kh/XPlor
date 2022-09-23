@@ -69,15 +69,15 @@ export default function AccountDetails({ data }: { data?: AddressDetails }) {
           </Tr>
           <Tr>
             <Td>Mint</Td>
-            <Td isNumeric>{dataDetails?.parsed.info.mint}</Td>
+            <Td isNumeric>{dataDetails?.parsed?.info?.mint}</Td>
           </Tr>
           <Tr>
             <Td>Owner</Td>
-            <Td isNumeric>{dataDetails?.parsed.info.owner}</Td>
+            <Td isNumeric>{dataDetails?.parsed?.info?.owner}</Td>
           </Tr>
           <Tr>
             <Td>State</Td>
-            <Td isNumeric>{dataDetails?.parsed.info.state}</Td>
+            <Td isNumeric>{dataDetails?.parsed?.info?.state}</Td>
           </Tr>
         </Tbody>
       </Table>

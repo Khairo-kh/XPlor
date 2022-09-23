@@ -72,10 +72,12 @@ export default function AccountOverview() {
       {!pubkey ? (
         <p>Not valid pubkey</p>
       ) : (
-        <VStack>
-          <AccountDetails data={{ pubkey, lamports, details }} />
-          <AccountHistory pubkey={pubkey} />
-        </VStack>
+          <div className='flex flex-col gap-y-4 mt-4'>
+            <h1>Account Details</h1>
+            <AccountDetails data={{ pubkey, lamports, details }} />
+            <h1>History</h1>
+            <AccountHistory pubkey={pubkey} />
+          </div>
       )}
     </>
   );
