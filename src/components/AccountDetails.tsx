@@ -66,18 +66,30 @@ export default function AccountDetails({ data }: { data?: AddressDetails }) {
             <Td>Address:</Td>
             <Td isNumeric>{data?.pubkey.toBase58()}</Td>
           </Tr>
-          <Tr>
-            <Td>Mint:</Td>
-            <Td isNumeric>{dataDetails?.parsed?.info?.mint}</Td>
-          </Tr>
-          <Tr>
-            <Td>Owner:</Td>
-            <Td isNumeric>{dataDetails?.parsed?.info?.owner}</Td>
-          </Tr>
-          <Tr>
-            <Td>State:</Td>
-            <Td isNumeric>{dataDetails?.parsed?.info?.state}</Td>
-          </Tr>
+          {
+            dataDetails?.parsed?.info?.mint && (
+            <Tr>
+              <Td>Mint:</Td>
+              <Td isNumeric>{dataDetails?.parsed?.info?.mint}</Td>
+            </Tr>
+            )
+          }
+          {
+            dataDetails?.parsed?.info?.owner && (
+            <Tr>
+              <Td>Owner:</Td>
+              <Td isNumeric>{dataDetails?.parsed?.info?.owner}</Td>
+            </Tr>
+            )
+          }
+          {
+            dataDetails?.parsed?.info?.state && (
+            <Tr>
+              <Td>State:</Td>
+              <Td isNumeric>{dataDetails?.parsed?.info?.state}</Td>
+            </Tr>
+            )
+          }
         </Tbody>
       </Table>
     </VStack>
