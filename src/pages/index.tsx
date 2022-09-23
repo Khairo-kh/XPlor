@@ -6,7 +6,7 @@ const Home: NextPage = (props) => {
   return (
     <div>
       <Head>
-        <title>Solana Block Explorer</title>
+        <title>Xplor - SOL Block Explorer</title>
         <meta
           name="description"
           content="Solana Block Explorer"

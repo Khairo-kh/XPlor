@@ -42,11 +42,11 @@ export default function SearchBar() {
   // Show search input and the result
   return (
     
-      <div className="w-15/16 flex  mt-5 mx-auto justify-center">
-        <form onSubmit={handleSubmit} className=" w-full">
+      <div className="w-[600px] mt-5 mx-auto">
+        <form onSubmit={handleSubmit} className="flex flex-row items-center justify-center mx-auto w-full">
           <input
             placeholder="Search transactions, programs, blocks"
-            className=" outline-none p-3   w-4/6 relative"
+            className=" outline-none p-3 rounded-l w-full "
             style={{ color: "black" }}
             type="text"
             value={searchValue}
@@ -54,7 +54,7 @@ export default function SearchBar() {
           />
 
           <input
-            className="bg-green-500  p-3 mt-5 border-none cursor-pointer"
+            className="bg-green-500 hover:bg-green-400 rounded-r h-full p-3 border-none cursor-pointer"
             type="submit"
             value="Submit"
           />
