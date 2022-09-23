@@ -66,10 +66,21 @@ export default function SupplyDataCard() {
 
   return activeStake ? (
     <div>
-      <div>Active Stake: {lamportsToSol(activeStake)}</div>
+
+
+<div className='flex flex-col bg-white p-5 rounded-sm justify-between' style={{color:'black'}}>
+        <h2 className="text-sm" style={{color:'gray'}}>Active Stake</h2>
+        <h4 className="text-3xl">{lamportsToSol(activeStake)}</h4>
+        {/* <h2 className="text-sm" style={{color:'gray'}}>Delinquent Stake</h2>
+        <h4>{delinquentStakePercentage}%</h4> */}
+        <h2 className="text-sm" style={{color:'gray'}}>Circulating Supply</h2>
+        <h4 className="text-3xl">{lamportsToSol(circulating)}</h4>
+      </div>
+      {/* <div>Active Stake: {lamportsToSol(activeStake)}</div>
       <div>Delinquent Stake %: {delinquentStakePercentage}</div>
       <div>Circulating Supply: {lamportsToSol(circulating)}</div>
-      <div>Non-Circulating Supply: {lamportsToSol(nonCirculating)}</div>
+      <div>Non-Circulating Supply: {lamportsToSol(nonCirculating)}</div> */}
+
     </div>
   ) : (
     <div>loading ...</div>

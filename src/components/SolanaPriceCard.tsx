@@ -33,13 +33,32 @@ export default function PriceCard() {
 
   // TODO: format values and put them in a styled card
   return (
-    <div>
-      <div>Market Cap: {formatter.format(solanaInfo?.marketCap)}</div>
-      <div>Market Cap Rank: {formatter.format(solanaInfo?.marketCapRank)}</div>
-      <div>Solana Price: {solanaInfo?.price}</div>
-      <div>Solana Price change %: {solanaInfo?.priceChange24}</div>
-      <div>volume: {formatter.format(solanaInfo?.volume24)}</div>
-      <div>updated at: {solanaInfo?.updatedAt.toDateString()}</div>
+    <div className='flex w-full align-center justify-around' style={{color:'black'}}>
+      
+      <div className='flex flex-col bg-white p-5 rounded-sm ' style={{color:'black'}}>
+        <h2 className="text-sm" style={{color:'gray'}}>SOL Price</h2>
+        <h4 className="text-3xl text-green-500">{solanaInfo?.price}</h4>
+        <h2 className="text-sm" style={{color:'gray'}}>{solanaInfo?.priceChange24}</h2>
+        
+      </div>
+      <div className='flex flex-col bg-white p-5 rounded-sm ' style={{color:'black'}}>
+        <h2 className="text-sm" style={{color:'gray'}}>Market Cap</h2>
+        <h4 className="text-3xl text-green-500">{formatter.format(solanaInfo?.marketCap)}</h4>
+        <h2 className="text-sm" style={{color:'gray'}}>Rank #{formatter.format(solanaInfo?.marketCapRank)}</h2>
+        
+      </div>
+      <div className='flex flex-col bg-white p-5 rounded-sm justify-between' style={{color:'black'}}>
+        <h2 className="text-sm" style={{color:'gray'}}>Volume</h2>
+        <h4 className="text-3xl text-green-500">{formatter.format(solanaInfo?.volume24)}</h4>
+        <h2 className="text-sm" style={{color:'gray'}}>Last Update</h2>
+        <h4 className="text-green-500">{solanaInfo?.updatedAt.toDateString()}</h4>
+      </div>
+      {/* <div>Market Cap: {formatter.format(solanaInfo?.marketCap)}</div> */}
+      {/* <div>Market Cap Rank: {formatter.format(solanaInfo?.marketCapRank)}</div> */}
+      {/* <div>Solana Price: {solanaInfo?.price}</div>
+      <div>Solana Price change %: {solanaInfo?.priceChange24}</div> */}
+      {/* <div>volume: {formatter.format(solanaInfo?.volume24)}</div>
+      <div>updated at: {solanaInfo?.updatedAt.toDateString()}</div> */}
     </div>
   );
 }

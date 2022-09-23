@@ -46,12 +46,37 @@ export default function ClusterCard() {
 
   // TODO: Styler and format the component properly
   return (
-    <div>
-      <div>Slot: {absoluteSlot}</div>
-      {blockHeight && <div> Block height: {blockHeight}</div>}
-      <div>Block Time: {new Date(blockTime).toDateString()}</div>
-      <div>Current Epoch: {currentEpoch}</div>
-      <div>Epoch progress: {epochProgress}</div>
-    </div>
+    // <div>
+    //   <div>Slot: {absoluteSlot}</div>
+    //   {blockHeight && <div> Block height: {blockHeight}</div>}
+    //   <div>Block Time: {new Date(blockTime).toDateString()}</div>
+    //   <div>Current Epoch: {currentEpoch}</div>
+    //   <div>Epoch progress: {epochProgress}</div>
+    // </div>
+     <table className="border-collapse border  w-3/4 ml-auto mr-auto border-green-500 p-5">
+      <tr>
+        <th className="text-center text-green-500 text-xl">Live Cluster Stats</th>
+      </tr>
+  <tr className="border-green-500">
+     <th className="p-4 text-left">Slot</th>
+     <td>{absoluteSlot}</td>
+   </tr>
+   <tr>
+     {blockHeight &&<th className="p-4 text-left">Block Height</th>}
+     <td>{blockHeight}</td>
+   </tr>
+  <tr>
+     <th className="p-4 text-left">Block Time</th>
+     <td>{new Date(blockTime).toDateString()}</td>
+   </tr>
+   <tr>
+     <th className="p-4 text-left">Current Epoch</th>
+     <td>{currentEpoch}</td>
+   </tr>
+   <tr>
+     <th className="p-4 text-left">Epoch progress</th>
+     <td>{epochProgress}</td>
+   </tr>
+ </table>
   );
 }
