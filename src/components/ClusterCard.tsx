@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { ClusterStats } from "../models/types";
 
 import useClusterStatsStore from "stores/useClusterStatsStore";
+import { Table, Tbody, Td, Th, Thead, Tr, VStack } from "@chakra-ui/react";
 
 export default function ClusterCard() {
   const {
@@ -46,37 +47,47 @@ export default function ClusterCard() {
 
   // TODO: Styler and format the component properly
   return (
-    // <div>
-    //   <div>Slot: {absoluteSlot}</div>
-    //   {blockHeight && <div> Block height: {blockHeight}</div>}
-    //   <div>Block Time: {new Date(blockTime).toDateString()}</div>
-    //   <div>Current Epoch: {currentEpoch}</div>
-    //   <div>Epoch progress: {epochProgress}</div>
-    // </div>
-     <table className="border-collapse border  w-3/4 ml-auto mr-auto border-green-500 p-5">
-      <tr>
-        <th className="text-center text-green-500 text-xl">Live Cluster Stats</th>
-      </tr>
-  <tr className="border-green-500">
-     <th className="p-4 text-left">Slot</th>
-     <td>{absoluteSlot}</td>
-   </tr>
-   <tr>
-     {blockHeight &&<th className="p-4 text-left">Block Height</th>}
-     <td>{blockHeight}</td>
-   </tr>
-  <tr>
-     <th className="p-4 text-left">Block Time</th>
-     <td>{new Date(blockTime).toDateString()}</td>
-   </tr>
-   <tr>
-     <th className="p-4 text-left">Current Epoch</th>
-     <td>{currentEpoch}</td>
-   </tr>
-   <tr>
-     <th className="p-4 text-left">Epoch progress</th>
-     <td>{epochProgress}</td>
-   </tr>
- </table>
+    absoluteSlot && (
+      <VStack>
+        <Table className="border-collapse border  w-3/4 ml-auto mr-auto border-green-500 p-5">
+          <Thead>
+            <Tr>
+              <Th className="text-center text-green-500 text-xl">{""}</Th>
+              <Th className="text-center text-green-500 text-xl">
+                Live Cluster Stats
+              </Th>
+              <Th className="text-center text-green-500 text-xl">{""}</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr className="border-green-500">
+              <Td className="p-4 text-left">Slot</Td>
+              <Td>{""}</Td>
+              <Td>{absoluteSlot}</Td>
+            </Tr>
+            <Tr>
+              {blockHeight && <Td className="p-4 text-left">Block Height</Td>}
+              <Td>{""}</Td>
+              <Td>{blockHeight}</Td>
+            </Tr>
+            <Tr>
+              <Td className="p-4 text-left">Block Time</Td>
+              <Td>{""}</Td>
+              <Td>{new Date(blockTime).toDateString()}</Td>
+            </Tr>
+            <Tr>
+              <Td className="p-4 text-left">Current Epoch</Td>
+              <Td>{""}</Td>
+              <Td>{currentEpoch}</Td>
+            </Tr>
+            <Tr>
+              <Td className="p-4 text-left">Epoch progress</Td>
+              <Td>{""}</Td>
+              <Td>{epochProgress}</Td>
+            </Tr>
+          </Tbody>
+        </Table>
+      </VStack>
+    )
   );
 }

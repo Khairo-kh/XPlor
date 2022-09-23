@@ -41,22 +41,29 @@ export default function SearchBar() {
 
   // Show search input and the result
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <label>
+    
+      <div className="w-15/16 flex  mt-5 mx-auto justify-center">
+        <form onSubmit={handleSubmit} className=" w-full">
           <input
-            className="input"
+            placeholder="Search transactions, programs, blocks"
+            className=" outline-none p-3   w-4/6 relative"
+            style={{ color: "black" }}
             type="text"
             value={searchValue}
             onChange={queryChangeHandler}
           />
-        </label>
-        <input className="submit" type="submit" value="Submit" />
-      </form>
+
+          <input
+            className="bg-green-500  p-3 mt-5 border-none cursor-pointer"
+            type="submit"
+            value="Submit"
+          />
+        </form>
 
       {searchType === "signature" && <TransactionDetails />}
 
       {searchType === "address" && <AccountOverview />}
-    </>
+      </div>
+    
   );
 }
