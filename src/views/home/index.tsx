@@ -11,44 +11,30 @@ import pkg from "../../../package.json";
 
 // Store
 import useUserSOLBalanceStore from "../../stores/useUserSOLBalanceStore";
+import Head from "next/head";
+import { ContextProvider } from "contexts/ContextProvider";
+import { AppBar } from "components/AppBar";
+import ClusterCard from "components/ClusterCard";
+import SolanaPriceCard from "../../components/SolanaPriceCard";
+import SearchBar from "components/SearchBar";
 
 export const HomeView: FC = ({}) => {
-  const wallet = useWallet();
-  const { connection } = useConnection();
-
-  const balance = useUserSOLBalanceStore((s) => s.balance);
-  const { getUserSOLBalance } = useUserSOLBalanceStore();
-
-  useEffect(() => {
-    if (wallet.publicKey) {
-      console.log(wallet.publicKey.toBase58());
-      getUserSOLBalance(wallet.publicKey, connection);
-    }
-  }, [wallet.publicKey, connection, getUserSOLBalance]);
-
   return (
-
-    <div className="md:hero mx-auto p-4 h-full content-center justify-center items-center">
-      {/*<div className="md:hero-content flex flex-col">
-        <h1 className="text-center text-5xl md:pl-12 font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195]">
-          Scaffold Lite <span className='text-sm font-normal align-top text-slate-700'>v{pkg.version}</span>
-        </h1>
-        <h4 className="md:w-full text-center text-slate-300 my-2">
-          <p>Simply the fastest way to get started.</p>
-          Next.js, tailwind, wallet, web3.js, and more.
-        </h4>
-        <div className="max-w-md mx-auto mockup-code bg-primary p-6 my-2">
-          <pre data-prefix=">">
-            <code className="truncate">Start building on Solana  </code>
-          </pre>
-        </div>        
-          <div className="text-center">
-          <RequestAirdrop />
-          {/* {wallet.publicKey && <p>Public Key: {wallet.publicKey.toBase58()}</p>} }
-          {wallet && <p>SOL Balance: {(balance || 0).toLocaleString()}</p>}
+    <>
+      <div className="flex flex-col h-screen bg-black">
+        <div className="w-full flex  mt-5 mx-auto justify-center">
+          <SearchBar />
         </div>
-      </div>*/}
-     <h2  style={{borderRadius:'5px',backgroundColor:'white',padding:'15px',cursor:'pointer',color:'black'}}>Connect Wallet</h2>
-    </div>
+        <div
+          className="flex align-center  w-3/4  "
+          style={{ margin: "30px auto" }}
+        >
+          <SolanaPriceCard />
+
+          {/* <SupplyDataCard/> */}
+        </div>
+        <ClusterCard />
+      </div>
+    </>
   );
 };
