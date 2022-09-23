@@ -23,9 +23,8 @@ export default function AccountDetails({ data }: { data?: AddressDetails }) {
         background="white"
         rounded="lg"
         p="4"
-        bg="red"
+        bg="#6b7280"
       >
-        <Heading size="md">Token Account</Heading>
         <Table variant="simple">
           <Tbody>
             <Tr>
@@ -56,7 +55,7 @@ export default function AccountDetails({ data }: { data?: AddressDetails }) {
       w="100%"
       align="start"
       rounded="lg"
-      bg="#36b85f"
+      bg="#6b7280"
       borderRadius={5}
       p={5}
     >
@@ -64,19 +63,19 @@ export default function AccountDetails({ data }: { data?: AddressDetails }) {
       <Table variant="simple">
         <Tbody>
           <Tr>
-            <Td>Address</Td>
+            <Td>Address:</Td>
             <Td isNumeric>{data?.pubkey.toBase58()}</Td>
           </Tr>
           <Tr>
-            <Td>Mint</Td>
+            <Td>Mint:</Td>
             <Td isNumeric>{dataDetails?.parsed?.info?.mint}</Td>
           </Tr>
           <Tr>
-            <Td>Owner</Td>
+            <Td>Owner:</Td>
             <Td isNumeric>{dataDetails?.parsed?.info?.owner}</Td>
           </Tr>
           <Tr>
-            <Td>State</Td>
+            <Td>State:</Td>
             <Td isNumeric>{dataDetails?.parsed?.info?.state}</Td>
           </Tr>
         </Tbody>
