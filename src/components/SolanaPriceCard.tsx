@@ -33,21 +33,21 @@ export default function PriceCard() {
 
   // TODO: format values and put them in a styled card
   return (
-    <div className='flex w-full align-center justify-around' style={{color:'black'}}>
+    <div className='flex w-full align-center justify-between gap-x-10' style={{color:'black'}}>
       
-      <div className='flex flex-col bg-white p-5 rounded-sm ' style={{color:'black'}}>
+      <div className='flex flex-col bg-white w-full p-5 rounded' style={{color:'black'}}>
         <h2 className="text-sm" style={{color:'gray'}}>SOL Price</h2>
         <h4 className="text-3xl text-green-500">{solanaInfo?.price}</h4>
         <h2 className="text-sm" style={{color:'gray'}}>{solanaInfo?.priceChange24}</h2>
         
       </div>
-      <div className='flex flex-col bg-white p-5 rounded-sm ' style={{color:'black'}}>
+      <div className='flex flex-col bg-white p-5 w-full rounded' style={{color:'black'}}>
         <h2 className="text-sm" style={{color:'gray'}}>Market Cap</h2>
         <h4 className="text-3xl text-green-500">{formatter.format(solanaInfo?.marketCap)}</h4>
         <h2 className="text-sm" style={{color:'gray'}}>Rank #{formatter.format(solanaInfo?.marketCapRank)}</h2>
         
       </div>
-      <div className='flex flex-col bg-white p-5 rounded-sm justify-between' style={{color:'black'}}>
+      <div className='flex flex-col bg-white p-5 w-full rounded justify-between' style={{color:'black'}}>
         <h2 className="text-sm" style={{color:'gray'}}>Volume</h2>
         <h4 className="text-3xl text-green-500">{formatter.format(solanaInfo?.volume24)}</h4>
         <h2 className="text-sm" style={{color:'gray'}}>Last Update</h2>

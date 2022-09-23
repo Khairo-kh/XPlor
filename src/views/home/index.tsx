@@ -21,8 +21,9 @@ import SearchBar from "components/SearchBar";
 export const HomeView: FC = ({}) => {
   return (
     <>
-      <div className="flex flex-col h-screen bg-black">
-        <div className="w-full flex  mt-5 mx-auto justify-center">
+      <div className="flex flex-col bg-black">
+        <div className="w-full flex flex-col mt-5 mx-auto justify-center mb-10">
+          <h1 className='mx-auto text-gray-500 text-7xl italic'>Xplore anything...</h1>
           <SearchBar />
         </div>
         <div

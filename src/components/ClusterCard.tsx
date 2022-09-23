@@ -49,7 +49,7 @@ export default function ClusterCard() {
   return (
     absoluteSlot && (
       <VStack>
-        <Table className="border-collapse border  w-3/4 ml-auto mr-auto border-green-500 p-5">
+        <Table className="mb-[200px] border-collapse border  w-3/4 ml-auto mr-auto border-green-500 p-5">
           <Thead>
             <Tr>
               <Th className="text-center text-green-500 text-xl">{""}</Th>
